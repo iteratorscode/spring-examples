@@ -9,6 +9,10 @@ spring:
   config:
     activate:
       on-profile: dev
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=500,expireAfterAccess=600s
 logging:
   level:
     org:
