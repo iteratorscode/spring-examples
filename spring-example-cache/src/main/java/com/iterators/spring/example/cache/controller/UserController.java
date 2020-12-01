@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 添加类描述信息
+ * User Controller
  *
  * @author iterators
  * @date 2020/11/30 下午8:17
@@ -24,6 +24,11 @@ public class UserController {
     @GetMapping("/{id}")
     private User getById(@PathVariable Long id) {
         return userService.getById(id);
+    }
+
+    @GetMapping("/remove/{id}")
+    private Boolean removeById(@PathVariable Long id) {
+        return userService.removeById(id);
     }
 
 }
