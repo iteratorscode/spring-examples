@@ -3,13 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>spring-examples</artifactId>
         <groupId>com.iterators</groupId>
+        <artifactId>spring-examples</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <artifactId>spring-example-aop</artifactId>
-    <version>${project.version}</version>
+    <version>1.0-SNAPSHOT</version>
     <name>spring-example-aop</name>
     <description>Demo project for Spring Boot</description>
 
