@@ -1,0 +1,19 @@
+
+spring:
+  profiles:
+    active: dev
+
+---
+server:
+  port: 8080
+spring:
+  config:
+    activate:
+      on-profile: dev
+  # JDK代理关闭
+  aop:
+    proxy-target-class: true
+logging:
+  level:
+    org:
+      springframework: TRACE

@@ -23,6 +23,8 @@
 
     <modules>
         <module>spring-example-cache</module>
+        <module>spring-example-async</module>
+        <module>spring-example-aop</module>
     </modules>
 
     <dependencyManagement>
