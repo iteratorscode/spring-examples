@@ -1,6 +1,6 @@
 package com.iterators.spring.example.aop.aspect;
 
-import com.iterators.spring.example.aop.annotation.HelloAnnotation;
+import com.iterators.spring.example.aop.annotation.WhitelistAnnotation;
 import com.iterators.spring.example.aop.component.whitelist.IWhitelistService;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -11,7 +11,6 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.CodeSignature;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.aop.framework.AopContext;
-import org.springframework.aop.framework.AopProxyUtils;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
@@ -29,19 +28,19 @@ import java.util.Optional;
 @Aspect
 @Component
 @Slf4j
-public class RequestQueryAspect {
+public class WhitelistAspect {
 
     private final IWhitelistService whitelistService;
 
-    public RequestQueryAspect(IWhitelistService whitelistService) {
+    public WhitelistAspect(IWhitelistService whitelistService) {
         this.whitelistService = whitelistService;
     }
 
-    @Pointcut(value = "@annotation(com.iterators.spring.example.aop.annotation.HelloAnnotation)")
-    public void helloAnnotationFilter() {
+    @Pointcut(value = "@annotation(com.iterators.spring.example.aop.annotation.WhitelistAnnotation)")
+    public void whitelistAnnotationFilter() {
     }
 
-    @Around("helloAnnotationFilter()")
+    @Around("whitelistAnnotationFilter()")
     public Object aroundAdviceForHello(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         extractJoinPointInfo(proceedingJoinPoint);
         extractProxyInfo(proceedingJoinPoint);
@@ -88,10 +87,10 @@ public class RequestQueryAspect {
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         String name = signature.getName();
         log.info("Target class: {}, name: {}", targetClazz, name);
-        HelloAnnotation helloAnnotation = signature.getMethod().getAnnotation(HelloAnnotation.class);
+        WhitelistAnnotation whitelistAnnotation = signature.getMethod().getAnnotation(WhitelistAnnotation.class);
         String filterPropertyName = "";
-        if (Objects.nonNull(helloAnnotation)) {
-            filterPropertyName = helloAnnotation.value();
+        if (Objects.nonNull(whitelistAnnotation)) {
+            filterPropertyName = whitelistAnnotation.value();
             log.info("filterPropertyName: {}", filterPropertyName);
         }
         return filterPropertyName;

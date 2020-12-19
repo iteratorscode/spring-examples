@@ -1,6 +1,6 @@
 package com.iterators.spring.example.aop.service.hello.impl;
 
-import com.iterators.spring.example.aop.annotation.HelloAnnotation;
+import com.iterators.spring.example.aop.annotation.WhitelistAnnotation;
 import com.iterators.spring.example.aop.service.hello.IHelloService;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class HelloServiceImpl implements IHelloService {
 
-    @HelloAnnotation(value = "id")
+    @WhitelistAnnotation(value = "id")
     @Override
     public String hello(Integer id) {
         return "From hello service" + id;
