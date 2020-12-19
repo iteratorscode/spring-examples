@@ -13,7 +13,7 @@ import java.util.List;
  * @date 2020/12/18 下午3:18
  */
 @Service
-public class IdWhitelistService implements IWhitelistService {
+public class IdWhitelistServiceImpl implements IWhitelistService {
     @Override
     public List<Object> getWhitelist() {
         return Collections.singletonList(1);

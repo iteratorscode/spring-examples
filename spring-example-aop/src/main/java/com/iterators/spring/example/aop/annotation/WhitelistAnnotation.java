@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
  */
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface HelloAnnotation {
+public @interface WhitelistAnnotation {
 
     /**
      * 要拦截的方法参数名
