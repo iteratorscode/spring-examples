@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: dev
+
+---
+server:
+  port: 8084
+spring:
+  config:
+    activate:
+      on-profile: dev
+logging:
+  level:
+    org:
+      springframework: TRACE
