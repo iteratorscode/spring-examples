@@ -26,6 +26,7 @@
         <module>spring-example-cache</module>
         <module>spring-example-async</module>
         <module>spring-example-aop</module>
+        <module>spring-example-disruptor</module>
     </modules>
 
     <dependencyManagement>
