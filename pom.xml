@@ -20,6 +20,7 @@
         <java.version>1.8</java.version>
         <caffeine.version>2.8.6</caffeine.version>
         <disruptor.version>3.4.2</disruptor.version>
+        <mybatis.spring.version>2.1.4</mybatis.spring.version>
     </properties>
 
     <modules>
@@ -27,6 +28,7 @@
         <module>spring-example-async</module>
         <module>spring-example-aop</module>
         <module>spring-example-disruptor</module>
+        <module>spring-example-mybatis</module>
     </modules>
 
     <dependencyManagement>
@@ -41,6 +43,11 @@
                 <groupId>com.lmax</groupId>
                 <artifactId>disruptor</artifactId>
                 <version>${disruptor.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.spring.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
