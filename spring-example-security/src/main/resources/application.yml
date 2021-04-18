@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+server:
+  port: 8888
+logging:
+  level:
+    root: debug
