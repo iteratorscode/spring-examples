@@ -9,10 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2021.04.17
  */
 @RestController
-@RequestMapping("/hello")
 public class HelloController {
 
-    @GetMapping("/")
+    @GetMapping("/hello")
     public String hello() {
         return "Hello from security";
     }

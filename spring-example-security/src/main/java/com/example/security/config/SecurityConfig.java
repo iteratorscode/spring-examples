@@ -28,12 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .passwordEncoder(passwordEncoder());
     }
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .antMatchers("/hello/").hasAuthority("admin")
-                .anyRequest().permitAll();
-    }
+
 
     @Bean
     public PasswordEncoder passwordEncoder() {
