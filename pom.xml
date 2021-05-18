@@ -30,6 +30,7 @@
         <module>spring-example-disruptor</module>
         <module>spring-example-mybatis</module>
         <module>spring-example-security</module>
+        <module>spring-example-core</module>
     </modules>
 
     <dependencyManagement>
