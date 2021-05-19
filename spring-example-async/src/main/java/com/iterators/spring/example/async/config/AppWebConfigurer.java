@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 /**
  * Web支持异步请求配置
  *
- * @author zhanghui
+ * @author iterators
  * @date 2020/12/17 上午11:54
  */
 @Configuration
