@@ -4,6 +4,7 @@ import com.iterators.spring.example.mybatis.dao.ICountryDao;
 import com.iterators.spring.example.mybatis.entity.Country;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -19,6 +20,7 @@ public class CountryService {
 
     private final ICountryDao countryDao;
 
+    @Transactional
     public List<Country> list() {
         return countryDao.list();
     }
