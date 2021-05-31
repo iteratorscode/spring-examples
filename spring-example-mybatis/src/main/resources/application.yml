@@ -3,6 +3,8 @@ spring:
     active: dev
 ---
 spring:
+  main:
+    banner-mode: off
   config:
     activate:
       on-profile: dev

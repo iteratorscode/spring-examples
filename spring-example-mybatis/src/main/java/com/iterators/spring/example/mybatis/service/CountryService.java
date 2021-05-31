@@ -1,6 +1,6 @@
 package com.iterators.spring.example.mybatis.service;
 
-import com.iterators.spring.example.mybatis.dao.ICountryDao;
+import com.iterators.spring.example.mybatis.mapper.CountryMapper;
 import com.iterators.spring.example.mybatis.entity.Country;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -18,10 +18,10 @@ import java.util.List;
 @AllArgsConstructor
 public class CountryService {
 
-    private final ICountryDao countryDao;
+    private final CountryMapper countryMapper;
 
     @Transactional
     public List<Country> list() {
-        return countryDao.list();
+        return countryMapper.list();
     }
 }

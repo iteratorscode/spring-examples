@@ -1,24 +1,19 @@
 package com.iterators.spring.example.mybatis.mapper;
 
 import com.iterators.spring.example.mybatis.entity.Country;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
 /**
- * Country Mapper
+ * Country DAO
  *
  * @author iterators
- * @date 2021/5/19 下午12:36
+ * @date 2021/5/19 下午12:28
  */
 public interface CountryMapper {
 
-    @Select("SELECT * FROM country")
-    @Results({
-        @Result(property = "id", column = "id"),
-        @Result(property = "name", column = "name")
-    })
-    List<Country> getAll();
+    /**
+     * 查询所有国家
+     */
+    List<Country> list();
 }
