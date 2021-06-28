@@ -1,12 +1,14 @@
 package com.example.spring.example.core;
 
-import com.example.spring.example.core.bean.ExcludeBean;
-import com.example.spring.example.core.bean.Foo;
+import com.example.spring.example.core.bean.*;
 import com.example.spring.example.core.config.ApplicationConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
+/**
+ * @author iterators
+ */
 @SpringBootApplication
 public class SpringExampleCoreApplication {
 
@@ -14,7 +16,16 @@ public class SpringExampleCoreApplication {
         ConfigurableApplicationContext context = SpringApplication.run(SpringExampleCoreApplication.class, args);
         context.getBean(ApplicationConfig.class);
         Foo.Bar bean = context.getBean(Foo.Bar.class);
-        System.out.println("bean.toString() = " + bean.toString());
+        System.out.println("bean.toString() = " + bean);
+
+        Dog dog = context.getBean(Dog.class);
+        System.out.println("dog.toString() = " + dog);
+
+        Cat cat = context.getBean(Cat.class);
+        System.out.println("dog.toString() = " + cat);
+
+        Zoo zoo = context.getBean(Zoo.class);
+        System.out.println("zoo = " + zoo);
     }
 
 }
