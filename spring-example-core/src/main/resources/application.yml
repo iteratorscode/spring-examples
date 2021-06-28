@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  main:
+    banner-mode: log
+logging:
+  level:
+    org:
+      springframework:
+        context: trace

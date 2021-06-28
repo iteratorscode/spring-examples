@@ -6,7 +6,7 @@ import org.springframework.web.context.request.async.DeferredResult;
 /**
  * Hello controler
  *
- * @author zhanghui
+ * @author iterators
  * @date 2020/12/17 上午11:47
  */
 @RestController

@@ -6,7 +6,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 /**
  * Aop 配置
  *
- * @author zhanghui
+ * @author iterators
  * @date 2020/12/18 下午4:06
  */
 @EnableAspectJAutoProxy(exposeProxy = true)

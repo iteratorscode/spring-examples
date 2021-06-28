@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * 白名单服务
  *
- * @author zhanghui
+ * @author iterators
  * @date 2020/12/18 下午3:16
  */
 public interface IWhitelistService {
