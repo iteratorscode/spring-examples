@@ -76,10 +76,11 @@ public class CustomRegisterBeanDefinition implements BeanDefinitionRegistryPostP
         BeanDefinition definition = getBeanDefinition(Zoo.class);
         if (definition instanceof GenericBeanDefinition) {
             // ((GenericBeanDefinition) definition).setAbstract(true);
+            // 通过 autowire可以自动注入dog属性
             ((GenericBeanDefinition) definition).setAutowireMode(AbstractBeanDefinition.AUTOWIRE_BY_NAME);
         }
         setPropertyArgumentValue(definition, "cat", "cat");
-        setPropertyArgumentValue(definition, "dog", Dog.class);
+        // setPropertyArgumentValue(definition, "dog", Dog.class);
         registry.registerBeanDefinition(beanNameGenerator.generateBeanName(definition, registry), definition);
     }
 
