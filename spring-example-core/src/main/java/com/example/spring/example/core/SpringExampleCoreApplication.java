@@ -15,8 +15,6 @@ public class SpringExampleCoreApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(SpringExampleCoreApplication.class, args);
         context.getBean(ApplicationConfig.class);
-        Foo.Bar bean = context.getBean(Foo.Bar.class);
-        System.out.println("bean.toString() = " + bean);
 
         Dog dog = context.getBean(Dog.class);
         System.out.println("dog.toString() = " + dog);
@@ -26,6 +24,9 @@ public class SpringExampleCoreApplication {
 
         Zoo zoo = context.getBean(Zoo.class);
         System.out.println("zoo = " + zoo);
+
+        Foo foo = context.getBean(Foo.class);
+        System.out.println("foo = " + foo);
     }
 
 }
