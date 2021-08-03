@@ -5,7 +5,7 @@
 <mapper namespace="com.iterators.spring.example.mybatis.mapper.CountryMapper">
 
 
-    <!--开启二级缓存-->
+    <!--开启二级缓存: 开启缓存后java 对象必须是可序列话的，不然会在使用缓存时报错-->
     <cache/>
 
     <select id="list" resultType="com.iterators.spring.example.mybatis.entity.Country" useCache="true">

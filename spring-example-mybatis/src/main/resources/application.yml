@@ -20,9 +20,11 @@ spring:
       idle-timeout: 18000
       connection-timeout: 3000
       max-lifetime: 1800000
-    initialization-mode: always # 执行schema的初始化
-    schema: classpath:schema.sql
-    data: classpath:data.sql
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
 mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
