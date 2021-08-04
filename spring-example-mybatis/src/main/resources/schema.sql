@@ -30,6 +30,24 @@ CREATE TABLE `authority`
     id   BIGINT       NOT NULL AUTO_INCREMENT,
     name VARCHAR(128) NOT NULL,
     code INT          NOT NULL DEFAULT '0',
-    desc VARCHAR      NOT NULL DEFAULT '',
+    desc VARCHAR(128)     NOT NULL DEFAULT '',
+    PRIMARY KEY (id)
+);
+
+DROP TABLE IF EXISTS `user_role_rel`;
+CREATE TABLE `user_role_rel`
+(
+    id      BIGINT NOT NULL AUTO_INCREMENT,
+    user_id    BIGINT NOT NULL DEFAULT '0',
+    role_id BIGINT NOT NULL DEFAULT '0',
+    PRIMARY KEY (id)
+);
+
+DROP TABLE IF EXISTS `role_authority_rel`;
+CREATE TABLE `role_authority_rel`
+(
+    id      BIGINT NOT NULL AUTO_INCREMENT,
+    role_id    BIGINT NOT NULL DEFAULT '0',
+    authority_id BIGINT NOT NULL DEFAULT '0',
     PRIMARY KEY (id)
 );
