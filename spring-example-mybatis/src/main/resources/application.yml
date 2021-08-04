@@ -10,19 +10,21 @@ spring:
       on-profile: dev
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://localhost/iterators?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:h2:mem:db_users;MODE=MYSQL;
     username: root
     password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: org.h2.Driver
     hikari:
       pool-name: IteratorsHikariCP
       minimum-idle: 5
       idle-timeout: 18000
       connection-timeout: 3000
       max-lifetime: 1800000
-    initialization-mode: always # 执行schema的初始化
-    schema: classpath:schema.sql
-    data: classpath:data.sql
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
 mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

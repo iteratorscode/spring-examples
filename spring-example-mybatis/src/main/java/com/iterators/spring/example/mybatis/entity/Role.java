@@ -5,15 +5,15 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * Country entity
- *
  * @author iterators
- * @date 2021/5/19 下午12:30
+ * @since 2021/08/03
  */
 @Data
-public class Country implements Serializable {
+public class Role implements Serializable {
 
     private Long id;
 
     private String name;
+
+    private Long authorityId;
 }
