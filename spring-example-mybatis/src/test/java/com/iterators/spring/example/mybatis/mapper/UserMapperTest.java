@@ -32,4 +32,12 @@ class UserMapperTest {
         List<UserDO> users = userMapper.listByIds(ids);
         log.info("users: {}", users);
     }
+
+    @Test
+    void saveUser() {
+        UserDO userDO = new UserDO();
+        userDO.setName("C");
+        userDO.setPassword("C");
+        userMapper.saveUser(userDO);
+    }
 }

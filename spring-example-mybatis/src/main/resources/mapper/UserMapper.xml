@@ -41,4 +41,10 @@
         </if>
         ;
     </select>
+
+    <insert id="saveUser" parameterType="com.iterators.spring.example.mybatis.domain.UserDO">
+        INSERT INTO user (name, password)
+        VALUES (#{user.name}, #{user.password})
+    </insert>
+
 </mapper>
