@@ -5,7 +5,7 @@
 <mapper namespace="com.iterators.spring.example.mybatis.mapper.UserMapper">
 
     <resultMap id="userDO" type="com.iterators.spring.example.mybatis.domain.UserDO">
-        <id property="id" column="u_id" />
+        <id property="id" column="u_id"/>
         <result property="name" column="u_name"/>
         <result property="password" column="u_password"/>
         <association property="role" resultMap="roleDO"/>
@@ -41,4 +41,10 @@
         </if>
         ;
     </select>
+
+    <insert id="saveUser" parameterType="com.iterators.spring.example.mybatis.domain.UserDO">
+        INSERT INTO user (name, password)
+        VALUES (#{user.name}, #{user.password})
+    </insert>
+
 </mapper>

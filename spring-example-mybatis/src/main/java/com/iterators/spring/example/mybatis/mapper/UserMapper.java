@@ -23,4 +23,10 @@ public interface UserMapper {
      * @param ids 用户id集合
      */
     List<UserDO> listByIds(@Param("ids") List<Long> ids);
+
+    /**
+     * 保存用户
+     */
+    void saveUser(@Param("user") UserDO user);
+
 }

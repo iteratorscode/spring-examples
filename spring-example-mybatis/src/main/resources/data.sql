@@ -19,6 +19,8 @@ VALUES ('ADMIN', 1, '==admin=='),
 
 INSERT INTO user_role_rel (user_id, role_id)
 VALUES (1, 1),
+       (1, 2),
+       (1, 3),
        (2, 1),
        (3, 2),
        (4, 2);
